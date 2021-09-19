@@ -83,7 +83,7 @@
     </section>
     <script>
       document.getElementById("get-started").addEventListener("click", () => {
-        window.location.href = "./dashboard";
+        window.location.href = "./dashboard/";
       });
       window.onload = async () => {
         await new Promise(requestAnimationFrame);
@@ -97,7 +97,6 @@
         alert(
           "CONGRATULATIONS 🥳🥳🥳🥳🥳🥳, you’ve been accepted into the University of Tinder!"
         );
-        prompt("How do you feel about this accomplishment?");
       };
       let clicked = false;
       window.onclick = async () => {
