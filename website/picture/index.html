@@ -4,7 +4,62 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>UTinder | Pictures</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="logo.png" />
   </head>
-  <body></body>
+  <body>
+    <div
+      class="w-100% p-4 flex flex-row items-center justify-center bg-pink-500"
+    >
+      <img class="w-16 rounded" src="../logo.png" alt="logo" />
+      <h1 class="text-3xl mx-3 m-0">🥳🥳🥳🥳 UTinder 🥳🥳🥳🥳</h1>
+      <img class="w-16 rounded" src="../logo.png" alt="logo" />
+    </div>
+    <section class="p-4 flex flex-col items-center justify-center">
+      <input id="file-upload" type="file" />
+    </section>
+    <section id="images" class="flex flex-row overflow-x-scroll"></section>
+    <script>
+      const fileUpload = document.getElementById("file-upload");
+      fileUpload.onchange = async () => {
+        const reader = new FileReader();
+        reader.readAsDataURL(fileUpload.files[0]);
+        const b64 = (
+          await new Promise((res) => {
+            reader.onload = () => {
+              res(reader.result);
+            };
+          })
+        ).slice(22);
+
+        const result = await fetch("http://localhost:5000", {
+          method: "POST",
+          body: {
+            img: b64,
+          },
+        })
+          .then((x) => x.json())
+          .then((x) => x.result);
+        // const result = 0;
+
+        const div = document.createElement("div");
+
+        const p = document.createElement("p");
+        p.innerText = `Attractiveness: ${(result * 100).toFixed()}%`;
+        p.classList.add("text-center");
+        div.appendChild(p);
+
+        const img = document.createElement("img");
+        img.classList.add("h-48");
+        img.src = `data:image/png;base64,${b64}`;
+        div.appendChild(img);
+
+        document.getElementById("images").appendChild(div);
+      };
+    </script>
+  </body>
 </html>
