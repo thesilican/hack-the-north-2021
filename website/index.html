@@ -38,7 +38,7 @@
           Dive into those books and get studying, because class is in session!
         </p>
       </div>
-      <button class="p-4 mt-12 bg-blue-500 hover:bg-blue-600 rounded">
+      <button id="get-started" class="p-4 mt-12 bg-blue-500 hover:bg-blue-600 rounded">
         Get Started
       </button>
     </section>
@@ -52,7 +52,7 @@
           border-bottom-right-radius: 1rem;
         "
       >
-        <p>Hello hello hello hello hello hello hello hello</p>
+        <p>I always struggled with choosing profile pictures. What’s cool nowadays? What do people want to see? I could never tell. But UTinder revolutionized my photo game and helped me create a profile I’m proud of. Now the right swipes are rolling in. Thanks, UTinder!</p>
       </div>
       <div
         class="bg-white p-20"
@@ -63,10 +63,13 @@
           border-bottom-right-radius: 8rem;
         "
       >
-        <p>Hello hello hello hello hello hello hello hello</p>
+        <p>I owe UTinder the world for teaching me the fine art of romance. Their bots felt so real and humanlike to talk to, and without the pressure of a real social interaction I could try out different approaches to breaking the ice and progressing the conversation. Now, I have all the confidence in the world when I see I’ve matched with someone. Thanks, UTinder!</p>
       </div>
     </section>
     <script>
+      document.getElementById("get-started").addEventListener("click", () => {
+        window.location.href = "./dashboard";
+      })
       // window.onload = async () => {
       //   await new Promise(requestAnimationFrame);
       //   alert(
