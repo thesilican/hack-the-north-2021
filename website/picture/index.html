@@ -34,15 +34,21 @@
               res(reader.result);
             };
           })
-        ).slice(22);
+        ).slice(23);
 
         const result = await fetch("http://localhost:5000", {
           method: "POST",
-          body: {
-            img: b64,
+          headers: {
+            "Content-Type": "application/json"
           },
+          body: JSON.stringify({
+            img: b64,
+          }),
         })
-          .then((x) => x.json())
+          .then((x) => {
+            console.log(x.body);
+            return x.json();
+          })
           .then((x) => x.result);
         // const result = 0;
 
@@ -55,7 +61,7 @@
 
         const img = document.createElement("img");
         img.classList.add("h-48");
-        img.src = `data:image/png;base64,${b64}`;
+        img.src = `data:image/jpeg;base64,${b64}`;
         div.appendChild(img);
 
         document.getElementById("images").appendChild(div);
