@@ -4,7 +4,74 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>UTinder | Homepage</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="logo.png" />
   </head>
-  <body></body>
+  <body>
+    <div
+      class="w-100% p-4 flex flex-row items-center justify-center bg-pink-500"
+    >
+      <img class="w-16 rounded" src="logo.png" alt="logo" />
+      <h1 class="text-3xl mx-3 m-0">🥳🥳🥳🥳 UTinder 🥳🥳🥳🥳</h1>
+      <img class="w-16 rounded" src="logo.png" alt="logo" />
+    </div>
+    <section
+      class="bg-center bg-cover p-48 flex flex-col items-center justify-center"
+      style="background-image: url('main-background.png')"
+    >
+      <div class="bg-white p-3 rounded-lg">
+        <p class="text-2xl">
+          Can’t get a date? Congratulations, you’ve been accepted into the
+          University of Tinder!
+        </p>
+        <p class="text-2xl">
+          UTinder is an all-in-one, AI-powered course that will have you up your
+          Tinder game in no time. With photo-selection recommendations and
+          virtual one-on-one chatting, UTinder will help you optimize your
+          profile and hone your social skills.
+        </p>
+        <p class="text-2xl">
+          Dive into those books and get studying, because class is in session!
+        </p>
+      </div>
+      <button class="p-4 mt-12 bg-blue-500 hover:bg-blue-600 rounded">
+        Get Started
+      </button>
+    </section>
+    <section class="bg-gray-400 p-24 flex flex-col items-center justify-center">
+      <div
+        class="bg-white p-20 mb-20"
+        style="
+          border-top-left-radius: 8rem;
+          border-top-right-radius: 8rem;
+          border-bottom-left-radius: 8rem;
+          border-bottom-right-radius: 1rem;
+        "
+      >
+        <p>Hello hello hello hello hello hello hello hello</p>
+      </div>
+      <div
+        class="bg-white p-20"
+        style="
+          border-top-left-radius: 8rem;
+          border-top-right-radius: 8rem;
+          border-bottom-left-radius: 1rem;
+          border-bottom-right-radius: 8rem;
+        "
+      >
+        <p>Hello hello hello hello hello hello hello hello</p>
+      </div>
+    </section>
+    <script>
+      window.onclick = async () => {
+        const audio = new Audio("air-horn.mp3");
+        audio.loop = true;
+        audio.play();
+      };
+    </script>
+  </body>
 </html>
